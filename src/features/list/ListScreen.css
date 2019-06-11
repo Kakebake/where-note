@@ -1,0 +1,22 @@
+.ListScreen {
+  display: flex;
+  justify-content: center;
+}
+
+.ListScreen-leftList {
+  padding: 20px;
+  text-align: left;
+}
+
+.ListScreen-rightList {
+  padding: 20px;
+  text-align: left;
+}
+
+.ListScreen-list {
+  background-color: burlywood;
+}
+
+.ListScreen-listHeader {
+  text-align: center;
+}

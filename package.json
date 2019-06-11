@@ -1,0 +1,36 @@
+{
+  "name": "where-frontend",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "husky": "^2.2.0",
+    "lint-staged": "^8.1.5",
+    "prettier": "^1.17.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.4.2",
+    "react-google-maps": "^9.4.5",
+    "react-router-dom": "^5.0.0",
+    "react-scripts": "1.1.4",
+    "recompose": "^0.30.0"
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,json,css}": [
+      "prettier --single-quote --write",
+      "git add"
+    ]
+  },
+  "scripts": {
+    "precommit": "lint-staged",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "eslint": "^5.4.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.1",
+    "eslint-plugin-react": "^7.11.1"
+  }
+}

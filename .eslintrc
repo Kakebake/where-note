@@ -1,0 +1,69 @@
+{
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true,
+      "experimentalObjectRestSpread": true
+    }
+  },
+  "extends": [
+    "eslint-config-airbnb-base",
+    "eslint-config-airbnb-base/rules/strict",
+    "eslint-config-airbnb/rules/react",
+    "prettier",
+    "react-app"
+  ],
+  "plugins": ["react", "react-native", "prettier", "babel"],
+  "globals": {
+    "fetch": true,
+    "ErrorUtils": true,
+    "btoa": true,
+    "__DEV__": true
+  },
+  "env": {
+    "jest": true
+  },
+  "rules": {
+    "arrow-body-style": 0,
+    "no-case-declarations": 0,
+    "no-unused-vars": [
+      "error",
+      {
+        "args": "after-used"
+      }
+    ],
+    "no-return-await": 0,
+    "import/extensions": 0,
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "packageDir": "./"
+      }
+    ],
+    "import/prefer-default-export": 0,
+    "import/no-unresolved": [2, { "ignore": ["^[~]"] }],
+    "new-cap": [
+      2,
+      {
+        "capIsNew": false,
+        "newIsCap": true
+      }
+    ],
+    "no-console": 0,
+    "prettier/prettier": [
+      "error",
+      {
+        "singleQuote": true,
+        "trailingComma": "all",
+        "bracketSpacing": true,
+        "jsxBracketSameLine": false,
+        "parser": "babylon",
+        "useTabs": false,
+        "tabWidth": 2
+      }
+    ],
+    "react/jsx-filename-extension": 0,
+    "react/no-unescaped-entities": 0
+  }
+}

@@ -1,0 +1,8 @@
+.List {
+  display: flex;
+  justify-content: center;
+}
+
+.List-link {
+  color: brown;
+}
