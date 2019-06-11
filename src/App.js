@@ -2,9 +2,7 @@ import React from 'react';
 import { useStateValue } from './state';
 import { Route, Link } from 'react-router-dom';
 import './App.css';
-import { ListScreen } from './features/list';
-import { StoreScreen } from './features/store';
-import { BrandScreen } from './features/brand';
+import { NotesScreen } from './features/notes';
 
 const App = () => {
   const [{ title }] = useStateValue();
@@ -14,7 +12,7 @@ const App = () => {
       <header className="App-header">
         <h1 className="App-title">{title}</h1>
         <p>{process.env.NODE_ENV}</p>
-        <Link to="/list" className="App-link">
+        <Link to="/notes" className="App-link">
           Notes
         </Link>
         <Link to="/profile" className="App-link">
@@ -22,12 +20,8 @@ const App = () => {
         </Link>
       </header>
       <div>
-        <Route path="/list" component={ListScreen} />
+        <Route path="/notes" component={NotesScreen} />
         <Route path="/profile" component={Profile} />
-        <Route path="/store" component={StoreScreen} exact />
-        <Route path="/store/:id" component={StoreScreen} />
-        <Route path="/brand" component={BrandScreen} exact />
-        <Route path="/brand/:id" component={BrandScreen} />
       </div>
     </div>
   );

@@ -1,0 +1,22 @@
+.NotesScreen {
+  display: flex;
+  justify-content: center;
+}
+
+.NotesScreen-leftList {
+  padding: 20px;
+  text-align: left;
+}
+
+.NotesScreen-rightList {
+  padding: 20px;
+  text-align: left;
+}
+
+.NotesScreen-list {
+  background-color: burlywood;
+}
+
+.NotesScreen-listHeader {
+  text-align: center;
+}

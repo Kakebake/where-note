@@ -9,73 +9,15 @@ const Root = () => {
     title: 'Where Fashion',
     complete: false,
     a: 'aaa',
-    stores: [
+    stores: [],
+    books: [
       {
-        id: 'hevnhevn',
-        name: 'Hevn',
-        streetAddress: 'Torggata 36 A',
-        zipCode: '0183',
-        city: 'Oslo',
-        country: 'Norway',
-        brands: ['Army Of Me', 'Avatar', 'Niløs', 'Norwegian Rain'],
-        header: '',
-        gallery: '',
-        url: 'https://hevn.no/',
-        info: 'This is a fashion store',
-        latitude: '',
-        longitude: ''
-      },
-      {
-        id: 'rainrain',
-        name: 'Norwegian Rain',
-        streetAddress: 'Karl Johans gate 41B',
-        zipCode: '0162',
-        city: 'Oslo',
-        country: 'Norway',
-        brands: ['Norwegian Rain', 'T-Michael'],
-        header: '',
-        gallery: '',
-        url: 'https://norwegianrain.com/',
-        info: 'This is a fashion store',
-        latitude: '',
-        longitude: ''
-      }
-    ],
-    brands: [
-      {
-        id: 'army',
-        name: 'Army Of Me',
-        info: 'This is a fashion brand',
-        url: 'https://www.armyofmedesign.com/',
-        shops: ['Hevn']
-      },
-      {
-        id: 'avatar',
-        name: 'Avatar',
-        info: 'This is a fashion brand',
-        url: 'http://www.fashion.com',
-        shops: ['Hevn']
-      },
-      {
-        id: 'nilos',
-        name: 'Niløs',
-        info: 'This is a fashion brand',
-        url: 'http://www.julius-garden.jp/',
-        shops: ['Hevn']
-      },
-      {
-        id: 'rain',
-        name: 'Norwegian Rain',
-        info: 'This is a fashion brand',
-        url: 'https://norwegianrain.com/',
-        shops: ['Hevn', 'Norwegian Rain']
-      },
-      {
-        id: 'tt',
-        name: 'T-Michael',
-        info: 'This is a fashion brand',
-        url: 'https://www.t-michael.com/',
-        shops: ['Norwegian Rain']
+        name: 'Baking',
+        notes: [
+          { name: 'Buy ingredients', checked: true },
+          { name: 'Bake cake', checked: false },
+          { name: 'Eat cake', checked: false }
+        ]
       }
     ]
   };
