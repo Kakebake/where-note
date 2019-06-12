@@ -19,11 +19,33 @@ const Root = () => {
           { name: 'Eat cake', checked: false }
         ]
       }
-    ]
+    ],
+    folders: {
+      cooking: {
+        buyIngredients: {
+          name: 'Buy ingredients',
+          checked: true
+        },
+        bakeCake: {
+          name: 'Bake cake',
+          checked: false
+        },
+        eatCake: {
+          name: 'Eat Cake',
+          checked: false
+        }
+      },
+      shopping: {}
+    }
   };
 
   const reducer = (state, action) => {
     switch (action.type) {
+      // case 'setNotes':
+      //   return {
+      //     ...state,
+      //     books: action.notes
+      //   };
       default:
         return state;
     }

@@ -10,7 +10,7 @@ const NotesScreen = () => {
     <div className="NotesScreen">
       <div className="NotesScreen-leftList">
         <p className="NotesScreen-listHeader">{books[0].name}</p>
-        {<NoteList notes={books[0].notes} />}
+        {<NoteList bookIndex="0" />}
       </div>
       <div className="NotesScreen-rightList">
         <p className="NotesScreen-listHeader">Brands</p>
