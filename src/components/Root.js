@@ -18,6 +18,14 @@ const Root = () => {
           { name: 'Bake cake', checked: false },
           { name: 'Eat cake', checked: false }
         ]
+      },
+      {
+        name: 'Shopping',
+        notes: [
+          { name: 'Find store', checked: false },
+          { name: 'Go to store', checked: false },
+          { name: 'Buy clothes', checked: false }
+        ]
       }
     ],
     folders: {
@@ -41,11 +49,12 @@ const Root = () => {
 
   const reducer = (state, action) => {
     switch (action.type) {
-      // case 'setNotes':
-      //   return {
-      //     ...state,
-      //     books: action.notes
-      //   };
+      case 'setNotes':
+        state.books[action.bookIndex].notes = action.notes;
+        return {
+          ...state,
+          books: state.books
+        };
       default:
         return state;
     }

@@ -9,7 +9,7 @@ const NoteList = props => {
 
   console.log('The notes are', cooking);
   const keys = Object.keys(cooking);
-  const listedStores = Object.values(cooking).map((note, index, array) => {
+  const listedStores = books[bookIndex].notes.map((note, index, array) => {
     console.log('The note is', note);
     console.log('The index is', index);
     console.log('The array is', array);
@@ -19,8 +19,9 @@ const NoteList = props => {
           type="checkbox"
           checked={note.checked}
           onChange={() => {
-            note.checked = !note.checked;
-            dispatch();
+            array[index].checked = !array[index].checked;
+            console.log('The new array is', array);
+            dispatch({ type: 'setNotes', notes: array, bookIndex });
           }}
         />
         {note.name}
