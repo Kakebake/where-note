@@ -1,18 +1,34 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useStateValue } from '../../../state';
 import './NoteList.css';
 
 const NoteList = props => {
-  const [{ books, folders }, dispatch] = useStateValue();
+  const [{ books }, dispatch] = useStateValue();
+  const [newNote, setNewNote] = useState('');
   const { bookIndex } = props;
-  const cooking = folders.cooking;
 
-  console.log('The notes are', cooking);
-  const keys = Object.keys(cooking);
+  const handleNewNoteChange = e => {
+    setNewNote(e.target.value);
+  };
+
+  const handleNewNoteSubmit = event => {
+    setNewNote('');
+    const newArray = books[bookIndex].notes.slice();
+    newArray.push({
+      name: newNote,
+      checked: false
+    });
+
+    dispatch({
+      type: 'setNotes',
+      notes: newArray,
+      bookIndex
+    });
+
+    event.preventDefault();
+  };
+
   const listedStores = books[bookIndex].notes.map((note, index, array) => {
-    console.log('The note is', note);
-    console.log('The index is', index);
-    console.log('The array is', array);
     return (
       <li key={note.name}>
         <input
@@ -20,7 +36,6 @@ const NoteList = props => {
           checked={note.checked}
           onChange={() => {
             array[index].checked = !array[index].checked;
-            console.log('The new array is', array);
             dispatch({ type: 'setNotes', notes: array, bookIndex });
           }}
         />
@@ -29,7 +44,14 @@ const NoteList = props => {
     );
   });
 
-  return <ul>{listedStores}</ul>;
+  return (
+    <div>
+      <ul>{listedStores}</ul>
+      <form onSubmit={handleNewNoteSubmit}>
+        <input type="text" value={newNote} onChange={handleNewNoteChange} />
+      </form>
+    </div>
+  );
 };
 
 export default NoteList;
