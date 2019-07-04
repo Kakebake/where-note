@@ -6,17 +6,16 @@ import { NoteList } from './components';
 const NotesScreen = () => {
   const [{ books }] = useStateValue();
 
-  return (
-    <div className="NotesScreen">
-      <div className="NotesScreen-leftList">
-        <p className="NotesScreen-listHeader">{books[0].name}</p>
-        {<NoteList bookIndex="0" />}
+  const booksComponent = books.map((book, index) => {
+    return (
+      <div className="NotesScreen-leftList" key={book.name}>
+        <p className="NotesScreen-listHeader">{book.name}</p>
+        {<NoteList bookIndex={index} />}
       </div>
-      <div className="NotesScreen-rightList">
-        <p className="NotesScreen-listHeader">Brands</p>
-      </div>
-    </div>
-  );
+    );
+  });
+
+  return <div className="NotesScreen">{booksComponent}</div>;
 };
 
 NotesScreen.propTypes = {};
