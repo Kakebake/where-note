@@ -12,20 +12,23 @@ const NoteList = props => {
   };
 
   const handleNewNoteSubmit = event => {
-    setNewNote('');
-    const newArray = books[bookIndex].notes.slice();
-    newArray.push({
-      name: newNote,
-      checked: false
-    });
-
-    dispatch({
-      type: 'setNotes',
-      notes: newArray,
-      bookIndex
-    });
-
     event.preventDefault();
+    setNewNote('');
+    const notes = books[bookIndex].notes.slice();
+    if (notes.find(note => note.name === newNote)) {
+      console.log('Already exists');
+    } else {
+      notes.push({
+        name: newNote,
+        checked: false
+      });
+
+      dispatch({
+        type: 'setNotes',
+        notes: notes,
+        bookIndex
+      });
+    }
   };
 
   const listedStores = books[bookIndex].notes.map((note, index, array) => {
