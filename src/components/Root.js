@@ -55,6 +55,14 @@ const Root = () => {
           ...state,
           books: state.books
         };
+      case 'addBook':
+        const books = state.books.slice();
+        books.push({ name: action.book, notes: [] });
+        console.log('Trying to add ', books);
+        return {
+          ...state,
+          books
+        };
       default:
         return state;
     }
