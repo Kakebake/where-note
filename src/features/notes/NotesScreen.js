@@ -38,7 +38,7 @@ const NotesScreen = () => {
   return (
     <div className="NotesScreen">
       {booksComponent}
-      <div key="New book">
+      <div className="NotesScreen-newBook" key="New book">
         <form onSubmit={handleNewBookSubmit}>
           <input type="text" value={newBook} onChange={handleNewBookChange} />
         </form>

@@ -20,3 +20,7 @@
 .NotesScreen-listHeader {
   text-align: center;
 }
+
+.NotesScreen-newBook {
+  padding: 40px;
+}
