@@ -31,19 +31,28 @@ const NoteList = props => {
     }
   };
 
+  const handleRemoveBookClick = () => {
+    dispatch({
+      type: 'removeBook',
+      index: bookIndex
+    });
+  };
+
   const listedStores = books[bookIndex].notes.map((note, index, array) => {
     return (
-      <li key={note.name}>
-        <input
-          type="checkbox"
-          checked={note.checked}
-          onChange={() => {
-            array[index].checked = !array[index].checked;
-            dispatch({ type: 'setNotes', notes: array, bookIndex });
-          }}
-        />
-        {note.name}
-      </li>
+      <div>
+        <li key={note.name}>
+          <input
+            type="checkbox"
+            checked={note.checked}
+            onChange={() => {
+              array[index].checked = !array[index].checked;
+              dispatch({ type: 'setNotes', notes: array, bookIndex });
+            }}
+          />
+          {note.name}
+        </li>
+      </div>
     );
   });
 
@@ -53,6 +62,7 @@ const NoteList = props => {
       <form onSubmit={handleNewNoteSubmit}>
         <input type="text" value={newNote} onChange={handleNewNoteChange} />
       </form>
+      <button onClick={handleRemoveBookClick}>Delete</button>
     </div>
   );
 };

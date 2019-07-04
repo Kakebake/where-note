@@ -31,17 +31,23 @@ const Root = () => {
   };
 
   const reducer = (state, action) => {
+    const books = state.books.slice();
     switch (action.type) {
       case 'setNotes':
-        state.books[action.bookIndex].notes = action.notes;
+        books[action.bookIndex].notes = action.notes;
         return {
           ...state,
-          books: state.books
+          books: books
         };
       case 'addBook':
-        const books = state.books.slice();
         books.push({ name: action.book, notes: [] });
         console.log('Trying to add ', books);
+        return {
+          ...state,
+          books
+        };
+      case 'removeBook':
+        books.splice(action.index, 1);
         return {
           ...state,
           books
