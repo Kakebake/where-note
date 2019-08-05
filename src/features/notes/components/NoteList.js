@@ -3,7 +3,7 @@ import { useStateValue } from '../../../state';
 import './NoteList.css';
 
 const NoteList = props => {
-  const [{ books }, dispatch] = useStateValue();
+  const [{ books, editMode }, dispatch] = useStateValue();
   const [newNote, setNewNote] = useState('');
   const { bookIndex } = props;
 
@@ -62,7 +62,7 @@ const NoteList = props => {
       <form onSubmit={handleNewNoteSubmit}>
         <input type="text" value={newNote} onChange={handleNewNoteChange} />
       </form>
-      <button onClick={handleRemoveBookClick}>Delete</button>
+      {editMode && <button onClick={handleRemoveBookClick}>Delete</button>}
     </div>
   );
 };

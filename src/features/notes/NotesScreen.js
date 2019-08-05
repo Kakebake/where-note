@@ -6,6 +6,7 @@ import { NoteList } from './components';
 const NotesScreen = () => {
   const [{ books }, dispatch] = useStateValue();
   const [newBook, setNewBook] = useState('');
+  let editMode = false;
 
   const handleNewBookChange = e => {
     setNewBook(e.target.value);
@@ -22,6 +23,12 @@ const NotesScreen = () => {
         book: newBook
       });
     }
+  };
+
+  const handleEditButtonClick = () => {
+    dispatch({
+      type: 'toggleEditMode'
+    });
   };
 
   const booksComponent = books.map((book, index) => {
@@ -42,6 +49,9 @@ const NotesScreen = () => {
         <form onSubmit={handleNewBookSubmit}>
           <input type="text" value={newBook} onChange={handleNewBookChange} />
         </form>
+      </div>
+      <div className="NotesScreen-editButton" key="Edit button">
+        <button onClick={handleEditButtonClick}>Edit</button>
       </div>
     </div>
   );

@@ -6,8 +6,9 @@ import App from '../App';
 
 const Root = () => {
   const initialState = {
-    title: 'Where Fashion',
+    title: 'Notes',
     complete: false,
+    editMode: false,
     a: 'aaa',
     stores: [],
     books: [
@@ -51,6 +52,11 @@ const Root = () => {
         return {
           ...state,
           books
+        };
+      case 'toggleEditMode':
+        return {
+          ...state,
+          editMode: !state.editMode
         };
       default:
         return state;
