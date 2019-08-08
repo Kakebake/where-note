@@ -4,6 +4,7 @@ import { Route, Link } from 'react-router-dom';
 import './App.css';
 import { NotesScreen } from './features/notes';
 import NavBar from './components/NavBar';
+import { ProfileScreen } from './features/profile';
 
 const App = () => {
   const [{ title }] = useStateValue();
@@ -24,15 +25,11 @@ const App = () => {
       </header>
       <div>
         <Route path="/notes" component={NotesScreen} />
-        <Route path="/profile" component={Profile} />
+        <Route path="/profile" component={ProfileScreen} />
         <NavBar />
       </div>
     </div>
   );
-};
-
-const Profile = () => {
-  return <p className="App-intro">Profilefile</p>;
 };
 
 export default App;
