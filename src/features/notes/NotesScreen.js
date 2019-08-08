@@ -6,7 +6,6 @@ import { NoteList } from './components';
 const NotesScreen = () => {
   const [{ books }, dispatch] = useStateValue();
   const [newBook, setNewBook] = useState('');
-  let editMode = false;
 
   const handleNewBookChange = e => {
     setNewBook(e.target.value);

@@ -40,7 +40,7 @@ const NoteList = props => {
 
   const listedStores = books[bookIndex].notes.map((note, index, array) => {
     return (
-      <div>
+      <div key={index}>
         <li key={note.name}>
           <input
             type="checkbox"
